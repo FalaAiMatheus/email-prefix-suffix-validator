@@ -2,7 +2,38 @@
   "name": "email-prefix-suffix-validator",
   "version": "0.0.1",
   "description": "Validate email addresses by prefix (local part) and suffix (domain) rules",
+  "keywords": [
+    "allowlist",
+    "domain",
+    "domain-whitelist",
+    "email",
+    "email-domain",
+    "email-validation",
+    "email-validator",
+    "prefix",
+    "suffix",
+    "typescript",
+    "validation",
+    "validator"
+  ],
+  "homepage": "https://github.com/FalaAiMatheus/email-prefix-suffix-validator#readme",
+  "bugs": {
+    "url": "https://github.com/FalaAiMatheus/email-prefix-suffix-validator/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "FalaAiMatheus",
+    "url": "https://github.com/FalaAiMatheus"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FalaAiMatheus/email-prefix-suffix-validator.git"
+  },
+  "files": [
+    "dist"
+  ],
   "type": "module",
+  "sideEffects": false,
   "main": "./dist/main.cjs",
   "module": "./dist/main.js",
   "types": "./dist/main.d.ts",
@@ -18,46 +49,23 @@
       }
     }
   },
-  "files": [
-    "dist"
-  ],
-  "sideEffects": false,
   "scripts": {
     "build": "tsdown",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "tsc --noEmit",
-    "prepublishOnly": "pnpm typecheck && pnpm test && pnpm build"
+    "prepublishOnly": "pnpm typecheck && pnpm test && pnpm build",
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix",
+    "fmt": "oxfmt",
+    "fmt:check": "oxfmt --check"
   },
-  "author": {
-    "name": "FalaAiMatheus",
-    "url": "https://github.com/FalaAiMatheus"
-  },
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FalaAiMatheus/email-prefix-suffix-validator.git"
-  },
-  "bugs": {
-    "url": "https://github.com/FalaAiMatheus/email-prefix-suffix-validator/issues"
-  },
-  "homepage": "https://github.com/FalaAiMatheus/email-prefix-suffix-validator#readme",
-  "keywords": [
-    "email",
-    "email-validator",
-    "email-validation",
-    "validator",
-    "validation",
-    "prefix",
-    "suffix",
-    "domain",
-    "email-domain",
-    "domain-whitelist",
-    "allowlist",
-    "typescript"
-  ],
-  "engines": {
-    "node": ">=20"
+  "devDependencies": {
+    "@types/node": "^26.6.3",
+    "oxfmt": "^0.71.0",
+    "oxlint": "^1.86.0",
+    "tsdown": "^0.23.0",
+    "typescript": "^7.0.2"
   },
   "devEngines": {
     "packageManager": {
@@ -66,10 +74,8 @@
       "onFail": "download"
     }
   },
-  "packageManager": "pnpm@12.8.1",
-  "devDependencies": {
-    "@types/node": "^26.6.3",
-    "tsdown": "^0.23.0",
-    "typescript": "^7.0.2"
-  }
+  "engines": {
+    "node": ">=20"
+  },
+  "packageManager": "pnpm@12.8.1"
 }
