@@ -35,13 +35,13 @@
   "type": "module",
   "sideEffects": false,
   "main": "./dist/main.cjs",
-  "module": "./dist/main.js",
-  "types": "./dist/main.d.ts",
+  "module": "./dist/main.mjs",
+  "types": "./dist/main.d.cts",
   "exports": {
     ".": {
       "import": {
-        "types": "./dist/main.d.ts",
-        "default": "./dist/main.js"
+        "types": "./dist/main.d.mts",
+        "default": "./dist/main.mjs"
       },
       "require": {
         "types": "./dist/main.d.cts",
@@ -53,7 +53,7 @@
     "build": "tsdown",
     "test": "vitest run",
     "test:watch": "vitest",
-    "typecheck": "tsc --noEmit",
+    "typecheck": "tsc -p tsconfig.test.json",
     "prepublishOnly": "pnpm typecheck && pnpm test && pnpm build",
     "lint": "oxlint",
     "lint:fix": "oxlint --fix",
@@ -61,11 +61,17 @@
     "fmt:check": "oxfmt --check"
   },
   "devDependencies": {
+    "@standard-schema/spec": "^1.1.0",
     "@types/node": "^26.6.3",
+    "joi": "^18.2.9",
     "oxfmt": "^0.71.0",
     "oxlint": "^1.86.0",
     "tsdown": "^0.23.0",
-    "typescript": "^7.0.2"
+    "typescript": "^7.0.2",
+    "valibot": "^1.5.0",
+    "vitest": "^5.0.3",
+    "yup": "^1.7.1",
+    "zod": "^4.6.5"
   },
   "devEngines": {
     "packageManager": {
